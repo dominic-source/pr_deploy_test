@@ -74,5 +74,6 @@ runs:
           PR_NUMBER: ${{ inputs.pr_number }}
       run: |
         sudo apt-get update -y
+        sudo apt-get install sshpass
         sudo chmod +x ./entrypoint.sh && ./entrypoint.sh
       shell: bash
