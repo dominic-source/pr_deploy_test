@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: deploy application
-        uses: ./
+        uses: ./.github/actions/pr-deploy
         with:
           server_host: ${{ secrets.HOST }}
           server_username: ${{ secrets.USERNAME  }}
