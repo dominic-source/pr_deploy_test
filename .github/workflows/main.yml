@@ -1,7 +1,7 @@
 name: Pull request deploy
 on:
   pull_request:
-    types: [opened, reopened, closed, synchronize]
+    types: [opened, reopened, synchronize]
 
 jobs:
   pr_deploy:
