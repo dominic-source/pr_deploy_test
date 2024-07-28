@@ -73,5 +73,5 @@ runs:
           BRANCH_NAME: ${{ inputs.branch_name }}
           PR_NUMBER: ${{ inputs.pr_number }}
       run: |
-        sudo chmod +x ../../entrypoint.sh && ../../entrypoint.sh
+        sudo chmod +x ./entrypoint.sh && ./entrypoint.sh
       shell: bash
