@@ -31,7 +31,7 @@ inputs:
     required: true
   env:
     description: Environment variables to pass to the container
-    required: true
+    required: false
   branch_name:
     description: The branch name for the github repository that made a pull request
     required: true
@@ -58,7 +58,7 @@ runs:
     #     GITHUB_ACTION_PATH: ${{ github.action_path }}
     - name: Run entrypoint.sh
       env:
-          GITHUB_ACTION_PATH: ${{ github.action_path }}
+          # GITHUB_ACTION_PATH: ${{ github.action_path }}
           SERVER_HOST: ${{ inputs.server_host }}
           SERVER_USERNAME: ${{ inputs.server_username }}
           SERVER_PASSWORD: ${{ inputs.server_password }}
@@ -73,5 +73,6 @@ runs:
           BRANCH_NAME: ${{ inputs.branch_name }}
           PR_NUMBER: ${{ inputs.pr_number }}
       run: |
+        sudo apt-get update -y
         sudo chmod +x ./entrypoint.sh && ./entrypoint.sh
       shell: bash
