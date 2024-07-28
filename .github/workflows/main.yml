@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploying PR
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: deploy application
         uses: ./.github/actions/pr-deploy
         with:
