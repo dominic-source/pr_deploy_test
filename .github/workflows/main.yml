@@ -9,11 +9,7 @@ jobs:
     name: Deploying PR
     steps:
       - uses: actions/checkout@v4
-      - name: Install SSH Client
-        run: sudo apt-get update && sudo apt-get install -y openssh-client
-      - name: Install Docker
-        uses: docker/setup-buildx-action@v2
-      - id: workflow
+      - name: deploy application
         uses: ./
         with:
           server_host: ${{ secrets.HOST }}
