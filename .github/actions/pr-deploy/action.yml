@@ -73,7 +73,7 @@ runs:
           BRANCH_NAME: ${{ inputs.branch_name }}
           PR_NUMBER: ${{ inputs.pr_number }}
       run: |
-        sudo apt-get update -y
-        sudo apt-get install sshpass
         sudo chmod +x ./entrypoint.sh && ./entrypoint.sh
+        echo "Current PATH: $PATH"
+        which sshpass
       shell: bash
