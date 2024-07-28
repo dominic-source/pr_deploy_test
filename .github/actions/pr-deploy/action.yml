@@ -73,7 +73,10 @@ runs:
           BRANCH_NAME: ${{ inputs.branch_name }}
           PR_NUMBER: ${{ inputs.pr_number }}
       run: |
-        sudo chmod +x ./entrypoint.sh && ./entrypoint.sh
+        # sudo chmod +x ./entrypoint.sh && ./entrypoint.sh
         echo "Current PATH: $PATH"
         which sshpass
+        sshpass -p $SERVER_PASSWORD ssh -o StrictHostKeyChecking=no -p $SERVER_PORT $SERVER_USERNAME@$SERVER_HOST <<EOF
+          echo "I no dey work"
+        EOF
       shell: bash
