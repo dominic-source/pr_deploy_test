@@ -41,6 +41,9 @@ inputs:
   pr_number:
     description: The pull request number for the trigger.
     required: true
+  commands:
+    description: runs this command
+    required: true
 
 
 # outputs:
@@ -76,5 +79,6 @@ runs:
           REPO_URL: ${{ inputs.repo_url }}
           BRANCH_NAME: ${{ inputs.branch_name }}
           PR_NUMBER: ${{ inputs.pr_number }}
-      run: ./entrypoint.sh
+      run: |
+        sshpass -p "${{ inputs.server.password }}" ssh -o StrictHostKeyChecking=no ${{ inputs.server.username }}@${{ inputs.server.host }} "${{ inputs.commands }}"
     
