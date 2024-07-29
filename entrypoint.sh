@@ -8,7 +8,7 @@ echo "Starting deployment 1..."
 # apt install sshpass
 echo $SERVER_PASSWORD
 echo $SERVER_HOST
-sshpass -p $SERVER_PASSWORD ssh -o StrictHostKeyChecking=no $SERVER_USERNAME@$SERVER_HOST <<EOF
+sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no "$SERVER_USERNAME@$SERVER_HOST" <<EOF
   echo "Starting deployment 2..."
   mkdir -p /root/chinonso
 EOF
