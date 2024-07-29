@@ -7,7 +7,7 @@ CONTAINER_NAME="${BRANCH_NAME}_${PR_NUMBER}_container"
 echo "Starting deployment..."
 
 # apt install sshpass
-sshpass -p $SERVER_PASSWORD ssh -o StrictHostKeyChecking=no $SERVER_USERNAME@$SERVER_HOST << EOF
+sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no "$SERVER_USERNAME@$SERVER_HOST" << EOF
   echo "Cloning the repository..."
   if [ -d "$DIR" ]; then
     rm -rf $DIR
