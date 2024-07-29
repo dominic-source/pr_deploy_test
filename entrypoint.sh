@@ -5,7 +5,6 @@ set -e
 PATH="/srv/hngprojects"
 CONTAINER_NAME="${BRANCH_NAME}_${PR_NUMBER}_container"
 echo "Starting deployment 1..."
-
 # apt install sshpass
 echo $SERVER_PASSWORD
 echo $SERVER_HOST
