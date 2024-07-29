@@ -24,4 +24,4 @@ jobs:
           repo_url: ${{ github.pull_request.head.repo.clone_url }}
           pr_number: ${{ github.event.pull_request.number }}
           # env: ${{ env }}
-          commands:  ./entrypoint.sh
+          commands:  entrypoint.sh
