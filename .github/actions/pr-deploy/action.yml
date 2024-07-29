@@ -56,8 +56,10 @@ runs:
     #   shell: bash
     #   env:
     #     GITHUB_ACTION_PATH: ${{ github.action_path }}
-    - name: Run entrypoint.sh
-      shell: bash
+    - name: install dependences
+      run: sudo apt-get update && sudo apt-get install -y sshpass
+
+    - name: Run entrypoint
       env:
           # GITHUB_ACTION_PATH: ${{ github.action_path }}
           SERVER_HOST: ${{ inputs.server_host }}
